@@ -46,7 +46,7 @@ def extract_table_names(str_sql):
         r"(?:FROM|JOIN)(?:\s+)([^\s\(\)]+)", flags=re.IGNORECASE | re.UNICODE
     )
 
-    return [re.sub(r'[\[\]\"\`]', '', match) for match in re.findall(PATTERN, str_sql)]
+    return [re.sub(r"[\[\]\"\`]", "", match) for match in re.findall(PATTERN, str_sql)]
 
 
 def print_summary(tables_by_qry):
@@ -159,8 +159,7 @@ def test_5():
     tables = extract_table_names(sql)
     expected = ["table0", "table1"]
 
-    assert len(tables) == len(expected) and all(
-        [i in expected for i in tables])
+    assert len(tables) == len(expected) and all([i in expected for i in tables])
 
 
 def test_6():
@@ -174,8 +173,7 @@ def test_6():
     tables = extract_table_names(sql)
     expected = ["table1", "table2", "table3", "table4", "table5", "table6"]
 
-    assert len(tables) == len(expected) and all(
-        [i in expected for i in tables])
+    assert len(tables) == len(expected) and all([i in expected for i in tables])
 
 
 def test_7():
@@ -187,5 +185,4 @@ def test_7():
     tables = extract_table_names(sql)
     expected = ["table0", "table1"]
 
-    assert len(tables) == len(expected) and all(
-        [i in expected for i in tables])
+    assert len(tables) == len(expected) and all([i in expected for i in tables])
