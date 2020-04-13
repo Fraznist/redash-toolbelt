@@ -1,4 +1,6 @@
-import itertools, json, re
+import itertools
+import json
+import re
 import click
 import pytest
 from redash_toolbelt import Redash
@@ -157,7 +159,8 @@ def test_5():
     tables = extract_table_names(sql)
     expected = ["table0", "table1"]
 
-    assert len(tables) == len(expected) and all([i in expected for i in tables])
+    assert len(tables) == len(expected) and all(
+        [i in expected for i in tables])
 
 
 def test_6():
@@ -171,7 +174,8 @@ def test_6():
     tables = extract_table_names(sql)
     expected = ["table1", "table2", "table3", "table4", "table5", "table6"]
 
-    assert len(tables) == len(expected) and all([i in expected for i in tables])
+    assert len(tables) == len(expected) and all(
+        [i in expected for i in tables])
 
 
 def test_7():
@@ -183,4 +187,5 @@ def test_7():
     tables = extract_table_names(sql)
     expected = ["table0", "table1"]
 
-    assert len(tables) == len(expected) and all([i in expected for i in tables])
+    assert len(tables) == len(expected) and all(
+        [i in expected for i in tables])
